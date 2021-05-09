@@ -11,9 +11,10 @@ This guide will show you how to connect your gke workload to redis (memorystore)
 ### Setup
 1. Go to [Google Cloud Shell](https://shell.cloud.google.com) and clone this repo
 ```sh
-project_id= <PROJECT_ID>
-redis_name= <INSTANCE_NAME>
-region= <REGION>
+project_id=<PROJECT_ID>
+redis_name=<INSTANCE_NAME>
+region=<REGION>
+cluster_name=<CLUSTER_NAME>
 ```
 
 2. Create a redis instance with encryption enabled
@@ -32,15 +33,28 @@ gcloud redis instances describe $redis_name --region=$region
 
 ```
 
+Set ip address variable.
+
+```sh
+
+redis_ip=<REDIS_IP>
+
+```
+
 4. Create a GKE cluster with ip-alias enabled.
 
 ```sh
 
-gcloud container clusters create cluster-name \
-  --region=region \
-  --enable-ip-alias \
-  --subnetwork=subnet-name \
-  --cluster-ipv4-cidr=pod-ip-range \
-  --services-ipv4-cidr=services-ip-range
+gcloud container clusters create $cluster_name \
+  --region=$region \
+  --enable-ip-alias
+
+```
+
+5. Create stunnel file configuration.
+
+```sh
+
+
 
 ```
