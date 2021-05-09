@@ -11,7 +11,8 @@ This guide will show you how to connect your gke workload to redis (memorystore)
 ### Setup
 1. Go to [Google Cloud Shell](https://shell.cloud.google.com) and clone this repo
 ```sh
-project_id= "unique-project-id"
+project_id= *PROJECT_ID*
+name= *INSTANCE_NAME*
 ```
 
 2. Create a redis instance with encryption enabled
