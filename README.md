@@ -14,3 +14,8 @@ Create a redis instance with encryption enabled
 gcloud redis instances create redis-name --transit-encryption-mode=server-authentication --region=us-central1
 
 ```
+
+### Setup
+1. Go to [Google Cloud Shell](https://shell.cloud.google.com) and clone this repo
+```sh
+project_id= "unique-project-id"
