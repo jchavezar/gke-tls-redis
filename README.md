@@ -164,7 +164,7 @@ spec:
       volumes:
       - name: sec
         secret:
-          secretName: caobject
+          secretName: casecret
 EOF
 
 ```
