@@ -107,6 +107,6 @@ EOF
 
 ```sh
 
-build . $image_name --tag gcr.io/$project_id/stunnel:v1
+gcloud build . $image_name --tag gcr.io/$project_id/stunnel:v1
 
 ```
