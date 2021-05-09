@@ -7,3 +7,9 @@ This guide will show you how to connect your gke workload to redis (memorystore)
 
 **Time to complete**: About 10 minutes
 
+```
+bash
+
+jaja
+
+```
