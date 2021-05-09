@@ -110,3 +110,11 @@ EOF
 docker build . $image_name --tag gcr.io/$project_id/stunnel:v1
 
 ```
+
+9. Push the image to google container registry (gcr.io).
+
+```sh
+
+gcloud push gcr.io/$project_id/stunnel:v1
+
+```
