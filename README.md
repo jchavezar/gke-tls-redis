@@ -67,7 +67,6 @@ accept=127.0.0.1:6378
 connect=$redis_ip:6378
 EOF
 
-
 ```
 
 6. Create the bash file.
