@@ -20,6 +20,16 @@ region= <REGION>
 
 ```sh
 
-gcloud redis instances create $redis_name --transit-encryption-mode=server-authentication --region=us-central1
+gcloud redis instances create $redis_name --transit-encryption-mode=server-authentication --region=$region
 
 ```
+
+3. Save the public ip address and CA key.
+
+```sh
+
+gcloud redis instances describe $redis_name --region=$region
+
+```
+
+4. 
