@@ -178,3 +178,20 @@ kubectl create -f deployment.yaml
 
 ```
 
+Testing.
+
+```sh
+
+kubectl exec -ti pod/<POD_NAME> /bin/bash
+telnet localhost 6378
+
+Logging:
+
+root@stunnel-7d95dff77d-srlc6:/# telnet localhost 6378
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+PING
++PONG
+
+```
