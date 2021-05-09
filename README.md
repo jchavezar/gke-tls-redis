@@ -15,6 +15,7 @@ project_id=<PROJECT_ID>
 redis_name=<INSTANCE_NAME>
 region=<REGION>
 cluster_name=<CLUSTER_NAME>
+image_name=<IMAGE_NAME>
 ```
 
 2. Create a redis instance with encryption enabled
@@ -98,5 +99,14 @@ RUN chmod +x /start_stunnel.sh
 RUN chmod 600 /etc/stunnel/redis-cli.conf
 CMD ["/start_stunnel.sh"]
 EOF
+
+```
+
+
+8. Build the container image locally.
+
+```sh
+
+buid . $image_name --tag gcr.io/$project_id/stunnel:v1
 
 ```
