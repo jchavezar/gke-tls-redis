@@ -17,6 +17,7 @@ region=<REGION>
 cluster_name=<CLUSTER_NAME>
 image_name=<IMAGE_NAME>
 secret_name=<SECRET_NAME>
+zone=<ZONE>
 ```
 
 2. Create a redis instance with encryption enabled
@@ -50,6 +51,7 @@ redis_ip=<REDIS_IP>
 gcloud container clusters create $cluster_name \
   --region=$region \
   --enable-ip-alias
+  --zone=$zone
 
 ```
 
