@@ -17,7 +17,6 @@ region=<REGION>
 cluster_name=<CLUSTER_NAME>
 image_name=<IMAGE_NAME>
 secret_name=<SECRET_NAME>
-deployment_name=<DEPLOYMENT_NAME>
 ```
 
 2. Create a redis instance with encryption enabled
@@ -175,7 +174,7 @@ EOF
 
 ```sh
 
-kubectl create -f $deployment_name
+kubectl create -f deployment.yaml
 
 ```
 
