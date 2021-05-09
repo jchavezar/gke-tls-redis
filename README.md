@@ -55,6 +55,17 @@ gcloud container clusters create $cluster_name \
 
 ```sh
 
+cat << EOF > redis-cli.conf
+output=/tmp/stunnel.log
+CAfile=/secret/server_ca.pem
+client=yes
+pid=/var/run/stunnel.pid
+verifyChain=yes
+sslVersion=TLSv1.2
+[redis]
+accept=127.0.0.1:6378
+connect=$redis_ip:6378
+EOF
 
 
 ```
