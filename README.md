@@ -50,7 +50,7 @@ redis_ip=<REDIS_IP>
 
 gcloud container clusters create $cluster_name \
   --region=$region \
-  --enable-ip-alias
+  --enable-ip-alias \
   --zone=$zone
 
 ```
