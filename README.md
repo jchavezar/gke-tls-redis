@@ -115,6 +115,6 @@ docker build . $image_name --tag gcr.io/$project_id/stunnel:v1
 
 ```sh
 
-gcloud push gcr.io/$project_id/stunnel:v1
+docker push gcr.io/$project_id/stunnel:v1
 
 ```
