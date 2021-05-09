@@ -16,6 +16,7 @@ redis_name=<INSTANCE_NAME>
 region=<REGION>
 cluster_name=<CLUSTER_NAME>
 image_name=<IMAGE_NAME>
+secret_name=<SECRET_NAME>
 ```
 
 2. Create a redis instance with encryption enabled
@@ -118,3 +119,50 @@ docker build . $image_name --tag gcr.io/$project_id/stunnel:v1
 docker push gcr.io/$project_id/stunnel:v1
 
 ```
+
+10. Create secret from the CA certificate downloaded earlier. Use an editor like vim|emacs|nano.
+
+
+```sh
+
+kubectl create secret generic $secret_name --from-file=server_ca.pem
+
+```
+
+11. Create deployment.yaml
+
+```sh
+
+cat << EOF > deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stunnel
+  labels:
+    app: stunnel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stunnel
+  template:
+    metadata:
+      labels:
+        app: stunnel
+    spec:
+      containers:
+      - name: stunnel
+        image: gcr.io/user-0001/stunnel:v1
+        ports:
+        - containerPort: 6378
+        volumeMounts:
+        - name: sec
+          mountPath: /secret/server_ca.pem
+          subPath: server_ca.pem
+          readOnly: true
+          #command: ["bash", "start_stunnel.sh"]
+      volumes:
+      - name: sec
+        secret:
+          secretName: caobject
+EOF
