@@ -13,6 +13,7 @@ This guide will show you how to connect your gke workload to redis (memorystore)
 ```sh
 project_id= <PROJECT_ID>
 redis_name= <INSTANCE_NAME>
+region= <REGION>
 ```
 
 2. Create a redis instance with encryption enabled
