@@ -49,9 +49,8 @@ redis_ip=<REDIS_IP>
 ```sh
 
 gcloud container clusters create $cluster_name \
-  --region=$region \
-  --enable-ip-alias \
-  --zone=$zone
+  --zone=$zone \
+  --enable-ip-alias
 
 ```
 
