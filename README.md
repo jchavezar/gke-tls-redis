@@ -32,4 +32,15 @@ gcloud redis instances describe $redis_name --region=$region
 
 ```
 
-4. 
+4. Create a GKE cluster with ip-alias enabled.
+
+```sh
+
+gcloud container clusters create cluster-name \
+  --region=region \
+  --enable-ip-alias \
+  --subnetwork=subnet-name \
+  --cluster-ipv4-cidr=pod-ip-range \
+  --services-ipv4-cidr=services-ip-range
+
+```
